@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/dist/css/styles.css">
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-2 text-center vh-100 sidebar ">
+                <div class="sidebar-items">
+                    <div class="sidebar-item"><a href="/src/profile" class="sidebar-link ">PROFILE</a></div>
+                    <div class="sidebar-item"><a href="/src/grades" class="sidebar-link">GRADES</a></div>
+                    <div class="sidebar-item"><a href="/src/messages" class="sidebar-link">MESSAGES</a></div>
+                </div>
+                <div class="logout">
+                    <a href="/src/login.html" class="log-out">LOGOUT</a>
+                </div>
+            </div>
+            <div class="col dashboard-nav ">
+                <br>
+                <a href="/src/index.html" class="navbar-brand h1 brand dashboard-brand">STUDENT's INFORMATION</a>
+                <div class="jumbotron body-ejs">
+                    <br>
+                    <h3>Hello There!!</h3>
+                    <h4>Welcome back..  <%= studentdata[0].full_name %> !!</h4>
+                    
+                    <hr>
+                    
+                    <h5>
+                        You can view your profile, check your grades and view messages sent by
+                        admin by navigations positioned at left of your screen.
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>

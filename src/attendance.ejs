@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/dist/css/styles.css">
+
+    <title>Attendance</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-2 text-center  sidebar ">
+                <div class="sidebar-items">
+                    <div class="sidebar-item"><a href="/src/update" class="sidebar-link ">UPDATE STUDENTS</a></div>
+                    <div class="sidebar-item"><a href="/src/fill-grades" class="sidebar-link">FILL GRADES</a></div>
+                    <div class="sidebar-item"><a href="/src/send-messages" class="sidebar-link">SEND MESSAGES</a></div>
+                    <div class="sidebar-item dashboard-active"><a href="/src/attendance" class="sidebar-link">ATTENDANCE</a></div>
+
+                </div>
+                <div class="logout">
+                    <a href="/src/login.html" class="log-out">LOGOUT</a>
+                </div>
+            </div>
+            <div class="col dashboard-nav ">
+                <br>
+                <a href="/src/index.html" class="navbar-brand h1 brand dashboard-brand">STUDENT's INFORMATION</a>
+                <div class="jumbotron body-ejs">
+                    <br>
+                    <h3 class="text-center">Attendance</h3>
+                    <br>
+                    <hr>
+                    <br>
+                    <form action="/mark-attendance" method="post">
+
+                    <table border="1px solid black" height="320px" width="90%">
+                        <tr class="table-header">
+                            <th class="table-id">PRN</th>
+                            <th>Student Name</th>
+                            <th>Status</th>
+                        </tr>
+                        <% if(info.length > 0){ %>
+                            <% for(let i = 0; i < info.length; i++ ){%>
+                                <tr class="table-body">
+                                    <td class="table-id">
+                                        <%- info[i].prn %>
+                                    </td>
+                                    <td>
+                                        <%- info[i].full_name %>
+                                    </td>
+                                    <td>
+                                            <input type="checkbox" name="present" value="Present">
+                                            <label for="present">Present</label>
+                                            &nbsp; &nbsp;                                        
+                                            <input type="checkbox" name="absent" value="Absent">
+                                            <label for="absent">Absent</label>
+                                        
+                                    </td>
+                                </tr>
+                                
+                            <% } %>
+                        <% } else { %>
+                            <h3>Database is empty.</h3>
+                        <% } %>
+                    </table>
+                        <input type="submit" value="Submit" class="btn-primary">
+                        <input type="reset" value="Reset" class="btn-danger">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js "></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
